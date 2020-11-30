@@ -53,10 +53,10 @@ arg args_getOne() {
 }
 
 arg *args_getAll() {
-    all_args = malloc(sizeof(arg) * args_until);
+    all_args = calloc(args_until + 1, sizeof(arg));
     if(all_args == NULL)
 	return NULL;
-    int additional_args = 0;
+    int additional_args = 1; // Start at one for last NULL
     for (unsigned int a = 0; a < args_until; a++) {
 	all_args[a] = args_getOne();
 	if(next_is_flag) {

@@ -22,7 +22,7 @@ arg args_getOne();
 
 /*
 Similar to getOne. Returns a vector of args. Requires the use of freeAll to
-clean up after itself.
+clean up after itself. The last arg in the list will be type arg_NONE
  */
 arg *args_getAll();
 
